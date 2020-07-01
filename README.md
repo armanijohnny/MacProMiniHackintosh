@@ -8,6 +8,7 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 
 ## The Build
 
+* **OpenCore:** 0.5.9
 * **CPU:** AMD Ryzen 9 3950X
 * **Motherboard:** Gigabyte X570i AORUS PRO WIFI
 * **Memory:** Corsair Vengeance LPX Pro 2x32GB = 64 GB DDR4-3600MHz
@@ -16,6 +17,13 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 * **Storage (media):** Sabrent Rocket 1 TB NVMe 4.0 M.2 SSD
 * **Wireless/Bluetooth:** Broadcom BCM94360NG
 * **Case/Cooler/Power:** NZXT H1
+
+## Kexts
+* AppleALC
+* WhateverGreen
+* Lilu
+* VirtualSMC
+* smalltreeintel82576
 
 ## Benchmarks
 
@@ -36,19 +44,19 @@ _All values are the average of three runs_
 ## What Works
 
 * **The System, It Boots, and Works!**
-* **CPU**: While this works it's not benchmarking where it should be. Did I lose in the silicon lottery?
-* **AirDrop Handoff**: I replaced the Intel card with the Broadcom CM94360NG
-* **Adobe Products**: Lightroom, Photoshop, all work but required some hacking
-* **Shutdown**: Sort of works but requires that I turn wifi off before shutdown otherwise it will restart/boot back up
-* **USB**: All works
-* **GPU**: AMD plug & play however see below about HEIC images
-* **LAN**: Works just fine but needs the right kext
-* **Final Cut Pro**: Works just fine
+* **CPU:** While this works it's not benchmarking where it should be. Did I lose in the silicon lottery?
+* **AirDrop Handoff:** I replaced the Intel card with the Broadcom CM94360NG
+* **Adobe Products:** Lightroom, Photoshop, all work but required some hacking
+* **Shutdown:** Sort of works but requires that I turn wifi off before shutdown otherwise it will restart/boot back up
+* **USB:** All works
+* **GPU:** AMD plug & play however see below about HEIC images
+* **LAN:** Works just fine but needs the right kext
+* **Final Cut Pro:** Works just fine
 
 ## What Doesn't Work
 
-* **HEIC**: HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU
-* **Sleep/Wake**: have not solved for this yet.
+* **HEIC**: HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU.
+* **Sleep/Wake**: have not solved for this yet. Not a big deal just...
 
 ## Issues
 
