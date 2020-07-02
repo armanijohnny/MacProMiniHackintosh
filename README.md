@@ -20,11 +20,12 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 * **Wireless/Bluetooth:** Broadcom BCM94360NG
 * **Case/Cooler/Power:** NZXT H1
 
-When it comes to parts there's a few things you have to consider and think about. 
-CPU: Prior to OpenCore Intel was the name of the game. However with OpenCore it's pretty easy to use an AMD chip. 
-GPU: AMD is whats supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist
-WIFI/BT: If you want this to have Airdrop and Handoff you need a Broadcom card. In my case a Broadcom BCM94360NG.
-Thunderbolt: If you want this you'll want to go Intel CPU with a mobo like a Z390 or you add a Titan Ridge TB card. At the moment I dont think AMD supported motherboard actually works.  
+**When it comes to parts there's a few things you have to consider and think about.**    
+**CPU:** Prior to OpenCore Intel was the name of the game and considered native. However with OpenCore it's pretty easy to use an AMD chip.  
+**GPU:** AMD is whats supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist   
+**WIFI/BT:** If you want this to have Airdrop and Handoff you need a Broadcom card. In my case a Broadcom BCM94360NG.  
+**Thunderbolt:** If you want this you'll want to go Intel CPU with a mobo like a Designare Z390 or you add a Titan Ridge TB card. At the moment I dont think AMD supported motherboard actually works.  
+**RAM:** With any computer build check the motherboards list of acceptable Ram otherwise you'll be wasting money.
 
 
 ## Start Here...
@@ -42,7 +43,7 @@ The reason why I chose the NZHT H1 case was because of many reasons. 1) Form Fac
 * [ProperTree](https://github.com/corpnewt/ProperTree) - GUI plist editor
 * [MaciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/) - AML(ACPI Machine Language) compiler and IDE 
 * [Mount EFI](https://github.com/corpnewt/MountEFI) - Mount the EFI from the bootloader and system drive so you can add files to it
-* [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate SMBIOS Serial Number
+* [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate SMBIOS Serial Number  
 * [USB Stick](https://amzn.to/38mfhUB) - For the bootloader. Minimum space needed at least 10GB. Must be formated so don't use and existing one with data you want to keep.
 * [Computer Tools for building computer](https://amzn.to/3ge7hHY) - Screw drivers and etc.
 
@@ -55,9 +56,22 @@ Video of how to do it: [Windows Version](https://www.youtube.com/watch?v=01q4M91
 ## OpenCore for Ryzen
 You'll now need to download the [latest OpenCore](https://github.com/acidanthera/OpenCorePkg/releases/) then start building your EFI folder. You'll also need [Mount EFI](https://github.com/corpnewt/MountEFI) so you can reach the EFI folders.  
 
-Instructions: OpenCore Adding 
-Video of how to build the EFI folder that needs to be loaded onto the Bootloader: [Technolli Easy OepnCore for Ryzen](https://www.youtube.com/watch?v=UDY0PsCEHx8)
+**Instructions:**
+Follow the OpenCore guide will be key. If you wish to check out a video a link is below.
+* [Adding The Base OpenCore Files](https://dortania.github.io/OpenCore-Desktop-Guide/installer-guide/opencore-efi.html)  
+* [Gather Kext & Drivers](https://dortania.github.io/OpenCore-Desktop-Guide/ktext.html) - A copy of my [EFI is located here](link to EFI folder)  
+* [ACPI](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml) - This is all I needed  
+* [Config.plist Setup](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/)  
+* [AMD Zen Config.plist](https://dortania.github.io/OpenCore-Desktop-Guide/AMD/zen.html)
+* [Patches.plist](https://github.com/AMD-OSX/AMD_Vanilla/tree/opencore/17h) - AMD Kernal patching
 
+**Video:** Great video on how to build the EFI folder that needs to be loaded onto the Bootloader: [Technolli Easy OepnCore for Ryzen](https://www.youtube.com/watch?v=UDY0PsCEHx8)
+
+**Installation**
+After loading all the neccessary items into the EFI folder onto your bootloader USB you are ready to Install it onto your PC. You'll want to go into the bios first to make some updates which the video below can explain what needs to be updated. 
+
+**Instructions:** [Installation](https://dortania.github.io/OpenCore-Desktop-Guide/installation/installation-process.html)  
+**Video:** [Technolli Easy OpenCore for Ryzen Install](https://youtu.be/UDY0PsCEHx8?t=1272)  
 
 ## Drivers
 
@@ -72,25 +86,26 @@ Video of how to build the EFI folder that needs to be loaded onto the Bootloader
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) - Used for graphics patching DRM, boardID, framebuffer fixes, etc, all GPUs benefit from this kext.
 * [smalltreeintel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases) - Ethernet for this motherboard to work. Required for I211 NICs, based off of the SmallTree kext but patched to support I211
 
+## ACPI  
+
+* [ACPI](https://dortania.github.io/Getting-Started-With-ACPI/) - What I only needed for this build [SSDT-EC-USBX-Desktop.aml](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml). These are tables present in your firmware that outline hardware devices like USB controllers, CPU threads, embedded controllers, system clocks and such.
+
 ## Benchmarks
 
-_All values are the average of three runs_
-
 * [Geekbench 5](https://www.geekbench.com/)
-  * Single Core: 
-  * Multicore: 
-  * OpenCL: 
-  * Metal: 
-* [LuxMark LuxBall](http://www.luxmark.info/): 
-* [BruceX](https://blog.alex4d.com/2013/10/30/brucex-a-new-fcpx-benchmark/):  seconds
-* [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 
-* [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550) (Samsung 970 Evo)
-  * Read:  MB/s
-  * Write:  MB/s
+  * Single Core: 1,320
+  * Multicore: 12,318 (A bit poor for this processor)
+  * OpenCL: 43,446
+  * Metal: 55,105
+* [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
+* [BruceX](https://blog.alex4d.com/2013/10/30/brucex-a-new-fcpx-benchmark/): 14.73 seconds
+* [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550)
+  * Read:  MB/s 5,000~
+  * Write:  MB/s 4,400~
   
 ## What Works
 
-* **The System, It Boots, and Works!**
+* **The System, It Boots, and Works Just Like a Mac!**
 * **CPU:** While this works it's not benchmarking where it should be. Did I lose in the silicon lottery?
 * **AirDrop Handoff:** I replaced the Intel card with the Broadcom CM94360NG
 * **Adobe Products:** Lightroom, Photoshop, all works but required some hacking
