@@ -24,7 +24,7 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 
 **CPU:** Prior to OpenCore Intel was the name of the game and considered native. However with OpenCore it's pretty easy to use an AMD chip.  
 
-**GPU:** AMD is whats supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist 
+**GPU:** AMD is what's supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist which is easy and in my config.plist. Although after going through this build I would suggest looking at GPU that are shipped on Macs. Even in the Mac Pro users have been reporting issues with using the 5700 XT cards also what I'm experiencing.  
 
 **WIFI/BT:** If you want this to have Airdrop and Handoff you need a Broadcom card. In my case a Broadcom BCM94360NG.  
 
