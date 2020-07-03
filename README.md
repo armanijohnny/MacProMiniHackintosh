@@ -1,4 +1,4 @@
-# Mac Pro Mini Hackintosh
+# Mac Pro Mini Hackintosh aka iHack Pro
 
 My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning. 
 
