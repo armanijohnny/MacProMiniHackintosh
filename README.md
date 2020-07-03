@@ -11,20 +11,25 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 * **OpenCore:** 0.5.9
 * **Mac OS:** Catalina 10.15.5
 * **SMBIOS:** iMacPro1,1
-* **CPU:** AMD Ryzen 9 3950X
-* **Motherboard:** Gigabyte X570i AORUS PRO WIFI
-* **Memory:** Corsair Vengeance LPX Pro 2x32GB = 64 GB DDR4-3600MHz
-* **Video Card:** Gigabyte Radeon RX 5700 XT 8 GB GAMING OC
-* **Storage (macOS):** Sabrent Rocket 1 TB NVMe 4.0 M.2 SSD
-* **Storage (media or dual boot):** Sabrent Rocket 1 TB NVMe 4.0 M.2 SSD (Still deciding if I want to use this to boot Windows)
-* **Wireless/Bluetooth:** Broadcom BCM94360NG
-* **Case/Cooler/Power:** NZXT H1
+* **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
+* **Motherboard:** [Gigabyte X570i AORUS PRO WIFI](https://amzn.to/38wQtti)
+* **Memory:** [Corsair Vengeance LPX Pro 2x32GB = 64 GB DDR4-3600MHz](https://amzn.to/3eXKIap)
+* **Video Card:** [Gigabyte Radeon RX 5700 XT 8 GB GAMING OC](https://amzn.to/2YWSpb7)
+* **Storage (macOS):** [Sabrent Rocket 1 TB NVMe 4.0 M.2 SSD](https://amzn.to/3irGee6)
+* **Storage (media or dual boot):** [Sabrent Rocket 1 TB NVMe 4.0 M.2 SSD](https://amzn.to/3irGee6) (Still deciding if I want to use this to boot Windows)
+* **Wireless/Bluetooth:** [Broadcom BCM94360NG](https://amzn.to/38rbMMU)
+* **Case/Cooler/Power:** [NZXT H1](https://www.nzxt.com/products/h1-matte-black)
 
 **When it comes to parts there's a few things you have to consider and think about.**    
+
 **CPU:** Prior to OpenCore Intel was the name of the game and considered native. However with OpenCore it's pretty easy to use an AMD chip.  
-**GPU:** AMD is whats supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist   
+
+**GPU:** AMD is whats supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist 
+
 **WIFI/BT:** If you want this to have Airdrop and Handoff you need a Broadcom card. In my case a Broadcom BCM94360NG.  
+
 **Thunderbolt:** If you want this you'll want to go Intel CPU with a mobo like a Designare Z390 or you add a Titan Ridge TB card. At the moment I dont think AMD supported motherboard actually works.  
+
 **RAM:** With any computer build check the motherboards list of acceptable Ram otherwise you'll be wasting money.
 
 
@@ -92,7 +97,7 @@ After loading all the neccessary items into the EFI folder onto your bootloader 
 
 ## Benchmarks
 
-Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the iMac Pro 18 core and the Mac Pro 12 Core. However either there is some issue with the CPU or the parts I've used but in theory and based on all the benchmarks I've seen from others the multi core should come in over 14,000~ in line with the Mac Pro 16 core. Still it's badass perfomance but possibly I lost out on the silicon lottery.
+Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the iMac Pro 18 core and the Mac Pro 12 Core. However either there is some issue with the CPU or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. Still it's badass perfomance but possibly I lost out on the silicon lottery. I'll reach out to AMD and check some forums on what the issues may be.
 
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,320
@@ -130,10 +135,13 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
 
 ## My Thoughts
 
-**Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.
-**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU...
-**Am I worried that Apple is going to be usng their ARM Chips?** As noted in their conference they intend to continue using Intel for awhile and supporting them for many many years. Plus the hackintosh community is very robust. Even to this day people can still jailbreak their iPhones and Apple I'm sure have tried to stop that.
-**How much was the build?** I'll have to total it all up but probably around $2,100~. Still this is amazing when the Mac Pro it benches against is around $9K!
+**Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
+
+**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU...  
+
+**Am I worried that Apple is going to be usng their ARM Chips?** As noted in their conference they intend to continue using Intel for awhile and supporting them for many many years. Plus the hackintosh community is very robust. Even to this day people can still jailbreak their iPhones and Apple I'm sure have tried to stop that.  
+
+**How much was the build?** I'll have to total it all up but probably around $2,100~. Still this is amazing when the Mac Pro it benches against is around $9K!  
 
 ## Resources
 * [**OpenCore**](https://dortania.github.io/OpenCore-Desktop-Guide/)
