@@ -92,9 +92,11 @@ After loading all the neccessary items into the EFI folder onto your bootloader 
 
 ## Benchmarks
 
+Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the iMac Pro 18 core and the Mac Pro 12 Core. However either there is some issue with the CPU or the parts I've used but in theory and based on all the benchmarks I've seen from others the multi core should come in over 14,000~ in line with the Mac Pro 16 core. Still it's badass perfomance but possibly I lost out on the silicon lottery.
+
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,320
-  * Multicore: 12,318 (A bit poor for this processor)
+  * Multicore: 12,318 (A bit poor for this processor. Still need to figure out why)
   * OpenCL: 43,446
   * Metal: 55,105
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
@@ -125,6 +127,13 @@ After loading all the neccessary items into the EFI folder onto your bootloader 
 ## Issues
 
 [See the GitHub repository issues tracker](https://github.com/armanijohnny/MacProMiniHackintosh/issues)
+
+## My Thoughts
+
+**Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.
+**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU...
+**Am I worried that Apple is going to be usng their ARM Chips?** As noted in their conference they intend to continue using Intel for awhile and supporting them for many many years. Plus the hackintosh community is very robust. Even to this day people can still jailbreak their iPhones and Apple I'm sure have tried to stop that.
+**How much was the build?** I'll have to total it all up but probably around $2,100~. Still this is amazing when the Mac Pro it benches against is around $9K!
 
 ## Resources
 * [**OpenCore**](https://dortania.github.io/OpenCore-Desktop-Guide/)
