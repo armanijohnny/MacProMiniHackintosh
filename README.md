@@ -1,6 +1,5 @@
 # Mac Pro Mini Hackintosh
 
-## Goal
 My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning. 
 
 Seeing that Apple came out with a very pricey version of the Mac Pro that starts out at $6K, I basically laughed at that idea of buying one. Having been a long time lurker of the Hackintosh movement I decided to jump into the pool after hearing about the success people were having with the OpenCore Vanilla Guide plus the use of AMD CPU's.
@@ -11,6 +10,7 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 
 * **OpenCore:** 0.5.9
 * **Mac OS:** Catalina 10.15.5
+* **SMBIOS:** iMacPro1,1
 * **CPU:** AMD Ryzen 9 3950X
 * **Motherboard:** Gigabyte X570i AORUS PRO WIFI
 * **Memory:** Corsair Vengeance LPX Pro 2x32GB = 64 GB DDR4-3600MHz
@@ -108,17 +108,19 @@ After loading all the neccessary items into the EFI folder onto your bootloader 
 * **The System, It Boots, and Works Just Like a Mac!**
 * **CPU:** While this works it's not benchmarking where it should be. Did I lose in the silicon lottery?
 * **AirDrop Handoff:** I replaced the Intel card with the Broadcom CM94360NG
-* **Adobe Products:** Lightroom, Photoshop, all works but required some hacking
+* **Adobe Products:** Lightroom, Photoshop, all works but required some [hacking](https://gist.github.com/naveenkrdy/26760ac5135deed6d0bb8902f6ceb6bd)
 * **Shutdown:** Sort of works but requires that I turn wifi off before shutdown otherwise it will restart/boot back up
 * **USB:** All works
 * **GPU:** AMD plug & play however see below about HEIC images
 * **LAN:** Works just fine but needs the right kext
 * **Final Cut Pro:** Works just fine
+* **Audio:** Top headphone jack works. I plan on using a USB for my DAC.  
 
 ## What Doesn't Work
 
 * **HEIC**: Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU.
-* **Sleep/Wake**: have not solved for this yet. Not a big deal just...
+* **Sleep/Wake**: Have not solved for this yet. Not a big deal just...
+* **System Freeze Sometimes**: After synching my Apple account, iCloud photos, and etc when the system is idle it freezes/crash but does not reboot. When I look into the crash logs I see VTDecoderXPCService. I think what may be happening is that the system is analysing all the iCloud photos plus the 5700 XT is having some issues there and causes the VTDecoderXPCService kernel panic. This seems to happen when the machine starts to go into a low power state before sleep and the MacOS AMD kexts cause a panic. I guess it happens in the real [Mac Pro with 5700 XT GPU](https://www.reddit.com/r/macpro/comments/eecm69/mac_pro_2019_kernel_panic_with_5700_xt_installed/) Until Catalina or Big Sur adds 5700 XT in their list it might be an on going issue. Word has it if you use SMBIOS of iMac19,1 you don't encounter these VTDecoderXPCService kernal panic [Link](https://www.reddit.com/r/hackintosh/comments/f7ixji/yet_another_louqe_ghost_s1_success_story_opencore/) An alternative is to go with an older Radeon GPU like the 580 or Vega.      
 
 ## Issues
 
