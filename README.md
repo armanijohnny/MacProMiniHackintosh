@@ -105,7 +105,7 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
 
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,320
-  * Multicore: 12,318 (A bit poor for this processor. Still need to figure out why)
+  * Multicore: 12,318 (Still need to figure out why it's not closer to 14K~)
   * OpenCL: 43,446
   * Metal: 55,105
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
