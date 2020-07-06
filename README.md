@@ -82,6 +82,15 @@ After loading all the neccessary items into the EFI folder onto your bootloader 
 **Instructions:** [Installation](https://dortania.github.io/OpenCore-Desktop-Guide/installation/installation-process.html)  
 **Video:** [Technolli Easy OpenCore for Ryzen Install](https://youtu.be/UDY0PsCEHx8?t=1272)  
 
+## BIOS Settings
+
+You'll want to go into your BIOS by restarting the computer and just hitting Delete until BIOS comes up. Just make sure that using the X570I motherboard that these settings are in place. XMP is not needed to be updated but from what I can tell the ram was not taking full advantage until I updated this setting. Also probably suggest to update your BIOS version as well just in case they come out with any new updates or improvements. 
+
+* Load Optimized Defaults
+* Above 4G Decoding - Disabled
+* CSM Support - Disabled
+* Extreme Memory Profile XMP - Profile 1
+
 ## Drivers
 
 * [HfsPlus.efi](https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi) - Needed for seeing HFS volumes
@@ -104,8 +113,8 @@ After loading all the neccessary items into the EFI folder onto your bootloader 
 Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the iMac Pro 18 core and the Mac Pro 12 Core. However either there is some issue with the CPU or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. Still it's badass perfomance but possibly I lost out on the silicon lottery. I'll reach out to AMD and check some forums on what the issues may be.
 
 * [Geekbench 5](https://www.geekbench.com/)
-  * Single Core: 1,320
-  * Multicore: 12,318 (Still need to figure out why it's not closer to 14K~)
+  * Single Core: 1,332
+  * Multicore: 12,934 (Still need to figure out why it's not closer to 14K~)
   * OpenCL: 43,446
   * Metal: 55,105
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
