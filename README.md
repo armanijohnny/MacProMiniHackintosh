@@ -178,6 +178,8 @@ On the other hand using more real life benchmarks such as Cinebench, Blender, Br
 
 ## My Thoughts
 
+![Image of Pixalated Wallpaper](https://preview.redd.it/t2t96tkhd2c51.jpg?width=4032&format=pjpg&auto=webp&s=9c02d95d49c384a89c4345c376b713135dc13908)
+*The Build (updated to MacPro7,1 and running Catalina 10.15.6)*
 **Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
 
 **What about the issues?** I kind of expected it and give me some time I should be able to solve for it. H̶E̶I̶C̶ ̶a̶n̶d̶ ̶S̶y̶s̶t̶e̶m̶ ̶f̶r̶e̶e̶z̶e̶ ̶s̶e̶e̶m̶ ̶t̶o̶ ̶b̶e̶ ̶r̶e̶l̶a̶t̶e̶d̶ ̶t̶o̶ ̶5̶7̶0̶0̶ ̶X̶T̶ ̶s̶o̶ ̶I̶ ̶m̶a̶y̶ ̶l̶o̶o̶k̶ ̶t̶o̶ ̶g̶o̶ ̶w̶i̶t̶h̶ ̶a̶n̶o̶t̶h̶e̶r̶ ̶G̶P̶U̶ ̶l̶i̶k̶e̶ ̶t̶h̶e̶ ̶V̶e̶g̶a̶,̶ ̶5̶8̶0̶,̶ ̶o̶r̶ ̶V̶I̶I̶ ̶o̶r̶ ̶j̶u̶s̶t̶ ̶w̶a̶i̶t̶ ̶i̶t̶ ̶o̶u̶t̶ ̶u̶n̶t̶i̶l̶ ̶A̶p̶p̶l̶e̶ ̶h̶a̶s̶ ̶b̶e̶t̶t̶e̶r̶ ̶s̶u̶p̶p̶o̶r̶t̶ ̶f̶o̶r̶ ̶t̶h̶e̶s̶e̶ ̶c̶a̶r̶d̶s̶.̶ ̶ Update: 7/20/20 Now that I've have the 5700 XT GPU issues resolved this system is just badass! 
