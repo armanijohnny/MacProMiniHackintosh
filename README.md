@@ -9,8 +9,8 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 ## The Build
 
 * **OpenCore:** 0.5.9
-* **Mac OS:** Catalina 10.15.5
-* **SMBIOS:** iMacPro1,1
+* **Mac OS:** Catalina 10.15.6
+* **SMBIOS:** MacPro7,1
 * **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
 * **Motherboard:** [Gigabyte X570i AORUS PRO WIFI](https://amzn.to/38wQtti)
 * **Memory:** [Corsair Vengeance LPX Pro 2x32GB = 64 GB DDR4-3600MHz](https://amzn.to/3eXKIap)
@@ -90,6 +90,7 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 * Above 4G Decoding - Disabled
 * CSM Support - Disabled
 * Extreme Memory Profile XMP - Profile 1
+* PCIe Slot Configuration - Gen3 (If you encounter issues with your system freezing up during Setup, After login, or in general and have a 5700XT paired with this board you'll need to switch it from Auto to Gen3 to get it stable. This also resolved my issues with the HEIC images/Dynamic Wallpaper being big block pixelated)
 
 ## Drivers
 
@@ -115,8 +116,8 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,332
   * Multicore: 12,934 (Still need to figure out why it's not closer to 14K~)
-  * OpenCL: 43,446
-  * Metal: 55,105
+  * OpenCL: 43,446 -> After Bios Update from Auto/Gen 4 to Gen 3 PCIE I got 52,439
+  * Metal: 55,524
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
 * [BruceX](https://blog.alex4d.com/2013/10/30/brucex-a-new-fcpx-benchmark/): 14.73 seconds
 * [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550)
@@ -131,22 +132,24 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
 * **Adobe Products:** Lightroom, Photoshop, all works but required some [hacking](https://gist.github.com/naveenkrdy/26760ac5135deed6d0bb8902f6ceb6bd)
 * **Shutdown:** Sort of works but requires that I turn wifi off before shutdown otherwise it will restart/boot back up
 * **USB:** All works
-* **GPU:** AMD plug & play however see below about HEIC images
+* **GPU:** AMD plug & play. I needed to update bios so that the PCIE instead of Auto I switched to Gen3 and everything is now stable.
 * **LAN:** Works just fine but needs the right kext
 * **Final Cut Pro:** Works just fine
 * **Audio:** Top headphone jack works. I plan on using a USB for my DAC.  
 
 ## What Doesn't Work
 
-* **HEIC**: Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU.
+* **HEIC: RESOLVED** Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU. **7/19/2020** Finally figured out the issue and how to resolve it. I needed to update the BIOS for the PCIE from Auto -> Gen3. No more issues with HEIC images.
 * **Sleep/Wake**: Have not solved for this yet. This issue is very likley due to USB configuration. I'll try to properly assign the USB ports and see if that works. 
-* **System Freeze Sometimes**: This is the [Kernal Panic Error](https://pastebin.com/qhKFQh8D) that I am seeing. After synching my Apple account, iCloud, Photos, and etc when the system is idle it freezes/crash but does not reboot. When I look into the crash logs I see VTDecoderXPCService. I think what may be happening is that the system is analysing all the iCloud photos/videos plus the 5700 XT is having some issues there and causes the VTDecoderXPCService kernel panic. This seems to happen when the machine starts to go into a low power state before sleep(even though I have sleep turned off) and the MacOS AMD kexts cause a panic. I guess it happens in the real [Mac Pro with 5700 XT GPU](https://www.reddit.com/r/macpro/comments/eecm69/mac_pro_2019_kernel_panic_with_5700_xt_installed/). Here's another thread about this [issue in real Mac Pro with the 5700 XT](https://forums.macrumors.com/threads/amd-radeon-rx-5700.2189066/page-7). Until Catalina or Big Sur adds 5700 XT in their list it might be an on going issue. Word has it if you use SMBIOS of iMac19,1 you don't encounter these VTDecoderXPCService kernal panic [Link](https://www.reddit.com/r/hackintosh/comments/f7ixji/yet_another_louqe_ghost_s1_success_story_opencore/) An alternative is to go with an older Radeon GPU like the 580 or Vega.
+* **System Freeze Sometimes: RESOLVED** This is the [Kernal Panic Error](https://pastebin.com/qhKFQh8D) that I am seeing. After synching my Apple account, iCloud, Photos, and etc when the system is idle it freezes/crash but does not reboot. When I look into the crash logs I see VTDecoderXPCService. I think what may be happening is that the system is analysing all the iCloud photos/videos plus the 5700 XT is having some issues there and causes the VTDecoderXPCService kernel panic. This seems to happen when the machine starts to go into a low power state before sleep(even though I have sleep turned off) and the MacOS AMD kexts cause a panic. I guess it happens in the real [Mac Pro with 5700 XT GPU](https://www.reddit.com/r/macpro/comments/eecm69/mac_pro_2019_kernel_panic_with_5700_xt_installed/). Here's another thread about this [issue in real Mac Pro with the 5700 XT](https://forums.macrumors.com/threads/amd-radeon-rx-5700.2189066/page-7). Until Catalina or Big Sur adds 5700 XT in their list it might be an on going issue. Word has it if you use SMBIOS of iMac19,1 you don't encounter these VTDecoderXPCService kernal panic [Link](https://www.reddit.com/r/hackintosh/comments/f7ixji/yet_another_louqe_ghost_s1_success_story_opencore/) An alternative is to go with an older Radeon GPU like the 580 or Vega.
 
    It appears this system freeze/crash may not be an issue with the 5700 XT but more of a Catalina issues. There's a [whole thread of people](https://forums.macrumors.com/threads/constant-kernel-panics-userspace-watchdog-timeout-no-successful-checkins-from-com-apple-windowserver.2222878/) with real Macs having similar issues. **[Solution]** So I found this [thread on AMD-OSX](https://amd-osx.com/forum/viewtopic.php?t=10025) and it did support my theory that it was Photos that was causing the system to crash. I simply moved my photo library out of the pictures folder and into the trashbin to test and the freezing/crash issue stopped. Let the machine run so the monitor could turn off and I was able to log back in just fine. I wonder if the process actually finishes analyzing all my photos/videos if there would still be this issue with smaller batches of images and photos being added/synched. I would love to have Photo's but until Apple comes up with a fix I may scrap it or I'll try to have the Photo's library on my 2nd M.2 drive that is designated for media or perhaps on my NAS. I'll report back and see but for now the system stopped crashing.
     
     **Update 7/05/2020: Work Around Solution** So I tested out my theory by creating a Photo's library on my NAS but the problem with that as I found out is that Photo's don't work on the NAS if I want to synch it with iCloud. However with my secondary Sabrent 1TB M.2 (now diesignated as my media drive) I created a new Photo's library on there and was able to synch my iCloud and it had no issues with freezing the system and successfully analyse all the videos and photos. So looks like i found my solution.
     
     **Update 7/07/2020:** So it seems like this is still not exaclty resolved/worked. I got the same panic error today while I was transfering a bunch of videos over from my DJI Osmo. It's possible the Photos was running it's analyses in the background again. I got the same Kernal Panic as I did before https://pastebin.com/qhKFQh8D. So it seems that this is a big problem on legit machines and not just hackintosh.  
+    
+    **Update 7/19/2020** I had major issues with freezing and I think I solved that by updating the BIOS Settings for the PCIE from Auto to Gen3 for the GPU. This seemed to have keep things stable and with no crashing!
 
 ## Issues
 
@@ -156,7 +159,7 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
 
 **Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
 
-**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU like the Vega, 580, or VII. Or go cheap for awhile and then wait for the 6000 series...   
+**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU like the Vega, 580, or VII. Or go cheap for awhile and then wait for the 6000 series... **Update 7/20/2020** Now that I have the 5700 XT issues with the HEIC and system freezing this is amazing!  
 
 **Am I worried that Apple is going to be usng their ARM Chips?** As noted in their conference they intend to continue using Intel for awhile and supporting them for many many years. Plus the hackintosh community is very robust. Even to this day people can still jailbreak their iPhones and Apple I'm sure have tried to stop that.  
 
@@ -166,5 +169,6 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
 * [**OpenCore**](https://dortania.github.io/OpenCore-Desktop-Guide/)
 * [**Technolli**](https://www.youtube.com/c/TechNolli/videos) 
 * [**r/Hackintosh subreddit**](https://www.reddit.com/r/hackintosh/)
+* [**AMD OSX**](https://forum.amd-osx.com/index.php)
 * [**TonyMacX86**](https://www.tonymacx86.com/)
 * [**Robeytech NZXT H1 Build**](https://youtu.be/0tNqpVc-B9A)
