@@ -54,7 +54,9 @@ The reason why I chose the NZHT H1 case was because of many reasons. 1) Form Fac
 
 **Additional Tools**
 
-* [SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) - All the tools for CPU power and Temprature out there are made for Windows. There's nothing for Mac's with AMD since the real Mac's don't have AMD. I found this tool that allows for you to manage the power and monitor the AMD CPU. Once installed iStat's pro now reads the temp and they have a nice app that has much more data and management.
+* Patience
+* Google Search
+* Navigating Forums
 
 ## Bootloader
 This is what you need to create on a formated USB drive(minimum 10GB)  with the MacOS of your choice and the EFI with all the drivers, kext, plist, and etc to get your new Hackitosh running. You can create the bootloader from a Mac or a Windows PC. This is also where you'll need to download [GibMacOS](https://github.com/corpnewt/gibMacOS) so you can get a copy of the MacOS of your choice.
@@ -104,6 +106,8 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 * [AppleALC](https://github.com/vit9696/AppleALC/releases) - Used for AppleHDA patching, used for giving you onboard audio. Ryzen/Threadripper systems rarely have mic support
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) - Used for graphics patching DRM, boardID, framebuffer fixes, etc, all GPUs benefit from this kext.
 * [smalltreeintel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases) - Ethernet for this motherboard to work. Required for I211 NICs, based off of the SmallTree kext but patched to support I211
+* [SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) - All the tools for CPU power and Temprature out there are made for Windows. There's nothing for Mac's with AMD since the real Mac's don't have AMD. I found this tool that allows for you to manage the power and monitor the AMD CPU. Once installed iStat's pro now reads the temp and they have a nice app that has much more data and management.
+* [Mac Pro Memory Disabler](https://github.com/IOIIIO/MacProMemoryNotificationDisabler/releases/) - Fix the "too much memory" error in the Memory tab of About This Mac. Typically when you use SMBIOS MacPro7,1
 
 ## ACPI  
 
