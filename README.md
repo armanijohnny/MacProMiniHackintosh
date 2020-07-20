@@ -24,7 +24,7 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 
 **CPU:** Prior to OpenCore Intel was the name of the game and considered native. However with OpenCore it's pretty easy to use an AMD chip.  
 
-**GPU:** AMD is what's supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist which is easy and in my config.plist. Although after going through this build I would suggest looking at GPU that are shipped on Macs. Even in the Mac Pro users have been reporting issues with using the 5700 XT cards also what I'm experiencing.  
+**GPU:** AMD is what's supported natively on MAC's and straight up plug play with no fuss. If you go with a 5000 series AMD GPU you'll need to add one extra Boot Arg to your plist which is easy and in my config.plist. I have encountered issues with the 5700 XT which are described below.  
 
 **WIFI/BT:** If you want this to have Airdrop and Handoff you need a Broadcom card. In my case a Broadcom BCM94360NG.  
 
@@ -57,6 +57,7 @@ The reason why I chose the NZHT H1 case was because of many reasons. 1) Form Fac
 * Patience
 * Google Search
 * Navigating Forums
+* Following in detail OpenCore guide
 
 ## Bootloader
 This is what you need to create on a formated USB drive(minimum 10GB)  with the MacOS of your choice and the EFI with all the drivers, kext, plist, and etc to get your new Hackitosh running. You can create the bootloader from a Mac or a Windows PC. This is also where you'll need to download [GibMacOS](https://github.com/corpnewt/gibMacOS) so you can get a copy of the MacOS of your choice.
@@ -107,7 +108,7 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) - Used for graphics patching DRM, boardID, framebuffer fixes, etc, all GPUs benefit from this kext.
 * [smalltreeintel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases) - Ethernet for this motherboard to work. Required for I211 NICs, based off of the SmallTree kext but patched to support I211
 * [SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) - All the tools for CPU power and Temprature out there are made for Windows. There's nothing for Mac's with AMD since the real Mac's don't have AMD. I found this tool that allows for you to manage the power and monitor the AMD CPU. Once installed iStat's pro now reads the temp and they have a nice app that has much more data and management.
-* [Mac Pro Memory Disabler](https://github.com/IOIIIO/MacProMemoryNotificationDisabler/releases/) - Fix the "too much memory" error in the Memory tab of About This Mac. Typically when you use SMBIOS MacPro7,1
+* [MacProMemoryNotificationDisabler](https://github.com/IOIIIO/MacProMemoryNotificationDisabler/releases/) - Fix the "too much memory" error in the Memory tab of About This Mac. Typically when you use SMBIOS MacPro7,1
 
 ## ACPI  
 
@@ -115,7 +116,9 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 
 ## Benchmarks
 
-Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the iMac Pro 18 core and the Mac Pro 12 Core. However either there is some issue with the CPU or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. Still it's badass perfomance but possibly I lost out on the silicon lottery. I'll reach out to AMD and check some forums on what the issues may be.
+Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the Mac Pro 16 core and the Mac Pro 12 Core. However either there is some issue with how Geekbench works, the CPU, or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. I've used SMCAMD tool to better gauge temprature and core usage and all appears normal.
+
+On the other hand using more real life benchmarks such as Cinebench, Blender, BruceX this thing is an absolute beast and performs just where the Ryzen 9 3950X should perform if not better in some cases. So overally yeah it totally matches the Mac Pro.
 
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,332
@@ -123,6 +126,13 @@ Just looking at Geekbench 5 numbers on the single core level it beats out all th
   * OpenCL: 43,446 -> After Bios Update from Auto/Gen 4 to Gen 3 PCIE I got 52,439
   * Metal: 55,524
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
+* [Blender Benchmark](https://opendata.blender.org/)
+  * bmw27: 1:14
+  * classroom: 3:37
+  * fish_cat: 1:52
+  * koro: 2:38
+  * pavillon_barcelona: 3:57
+  * victor: 8:35
 * [BruceX](https://blog.alex4d.com/2013/10/30/brucex-a-new-fcpx-benchmark/): 14.73 seconds
 * [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550)
   * Read:  MB/s 5,000~
