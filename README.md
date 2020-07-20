@@ -173,7 +173,7 @@ On the other hand using more real life benchmarks such as Cinebench, Blender, Br
 
 **Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
 
-**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU like the Vega, 580, or VII. Or go cheap for awhile and then wait for the 6000 series... **Update 7/20/2020** Now that I have the 5700 XT issues with the HEIC and system freezing this is amazing!  
+**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. HEIC and System freeze seem to be related to 5700 XT so I may look to go with another GPU like the Vega, 580, or VII. Or go cheap for awhile and then wait for the 6000 series... **Update 7/20/2020** Now that I have the 5700 XT issues resolved with the HEIC and system freezing this system is amazing!  
 
 **Am I worried that Apple is going to be usng their ARM Chips?** As noted in their conference they intend to continue using Intel for awhile and supporting them for many many years. Plus the hackintosh community is very robust. Even to this day people can still jailbreak their iPhones and Apple I'm sure have tried to stop that.  
 
