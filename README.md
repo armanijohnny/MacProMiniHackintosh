@@ -127,7 +127,7 @@ On the other hand using more real life benchmarks such as Cinebench, Blender, Br
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,332
   * Multicore: 12,934 (Still need to figure out why it's not closer to 14K~)
-  * OpenCL: 43,446 -> After Bios Update from Auto/Gen 4 to Gen 3 PCIE I got 52,439
+  * OpenCL: 52,439
   * Metal: 55,524
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
 * [Blender Benchmark](https://opendata.blender.org/)
@@ -160,7 +160,7 @@ On the other hand using more real life benchmarks such as Cinebench, Blender, Br
 ![Image of Pixalated Wallpaper](https://preview.redd.it/vy7d1osodp951.png?width=1912&format=png&auto=webp&s=444be5fcff163627662d7c9ab384baa804b9ed25)
 *(HEIC/Dynamic Wallpaper issue. Update 7/20/2020 Issue is now Resolved :-)*
 
-* **HEIC: [RESOLVED]** Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU. **7/19/2020** Finally figured out the issue and how to resolve it. I needed to update the BIOS for the PCIE from Auto -> Gen3. No more issues with HEIC images. In BIOS -> Advanced Mode -> Settings -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it.
+* **HEIC: [RESOLVED]** Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU. **7/19/2020** Finally figured out the issue and how to resolve it. I needed to update the BIOS for the PCIE from Auto -> Gen3. No more issues with HEIC images. In BIOS -> Advanced Mode -> Settings -> Miscellaneous -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it.
 * **Sleep/Wake**: Have not solved for this yet. This issue is very likley due to USB configuration. I'll try to properly assign the USB ports and see if that works. 
 * **System Freeze Sometimes: [RESOLVED]** This is the [Kernal Panic Error](https://pastebin.com/qhKFQh8D) that I am seeing. After synching my Apple account, iCloud, Photos, and etc when the system is idle it freezes/crash but does not reboot. When I look into the crash logs I see VTDecoderXPCService. I think what may be happening is that the system is analysing all the iCloud photos/videos plus the 5700 XT is having some issues there and causes the VTDecoderXPCService kernel panic. This seems to happen when the machine starts to go into a low power state before sleep(even though I have sleep turned off) and the MacOS AMD kexts cause a panic. I guess it happens in the real [Mac Pro with 5700 XT GPU](https://www.reddit.com/r/macpro/comments/eecm69/mac_pro_2019_kernel_panic_with_5700_xt_installed/). Here's another thread about this [issue in real Mac Pro with the 5700 XT](https://forums.macrumors.com/threads/amd-radeon-rx-5700.2189066/page-7). Until Catalina or Big Sur adds 5700 XT in their list it might be an on going issue. Word has it if you use SMBIOS of iMac19,1 you don't encounter these VTDecoderXPCService kernal panic [Link](https://www.reddit.com/r/hackintosh/comments/f7ixji/yet_another_louqe_ghost_s1_success_story_opencore/) An alternative is to go with an older Radeon GPU like the 580 or Vega.
 
@@ -170,7 +170,7 @@ On the other hand using more real life benchmarks such as Cinebench, Blender, Br
     
     **Update 7/07/2020:** So it seems like this is still not exaclty resolved/worked. I got the same panic error today while I was transfering a bunch of videos over from my DJI Osmo. It's possible the Photos was running it's analyses in the background again. I got the same Kernal Panic as I did before https://pastebin.com/qhKFQh8D. So it seems that this is a big problem on legit machines and not just hackintosh.  
     
-    **Update 7/19/2020 [Resolved]** I had major issues with freezing and I think I solved that by updating the BIOS Settings for the PCIE from Auto to Gen3 for the GPU. This seemed to have keep things stable and with no crashing! So if you are using a similar motherboard and GPU as mine try this in the BIOS: In BIOS -> Advanced Mode -> Settings -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it. This solved all my issues with the system freezing. I even had it scan my 101GB worth of icloud Photos library with no issues. Also the issues with HEIC/Dynamic wallpaper went away as well. No more freezing while left idle. 
+    **Update 7/19/2020 [Resolved]** I had major issues with freezing and I think I solved that by updating the BIOS Settings for the PCIE from Auto to Gen3 for the GPU. This seemed to have keep things stable and with no crashing! So if you are using a similar motherboard and GPU as mine try this in the BIOS: In BIOS -> Advanced Mode -> Settings -> Miscellaneous -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it. This solved all my issues with the system freezing. I even had it scan my 101GB worth of icloud Photos library with no issues. Also the issues with HEIC/Dynamic wallpaper went away as well. No more freezing while left idle. 
 
 ## Issues
 
