@@ -122,7 +122,7 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 
 Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the Mac Pro 16 core and the Mac Pro 12 Core. However either there is some issue with how Geekbench works, the CPU, or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. I've used SMCAMD tool to better gauge temprature and core usage and all appears normal.
 
-On the other hand using more real life benchmarks such as Cinebench, Blender, BruceX this thing is an absolute beast and performs just where the Ryzen 9 3950X should perform if not better in some cases. So overally yeah it totally matches the Mac Pro.
+On the other hand using more 'real world' benchmarks such as Cinebench, Blender, BruceX this thing is an absolute beast and performs just where the Ryzen 9 3950X should perform if not better in some cases. So overally yeah it totally matches the Mac Pro.
 
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,332
