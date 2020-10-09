@@ -1,7 +1,7 @@
 # Mac Pro Mini Hackintosh aka iHack Pro
 
 ![Image of Hackintosh Working](https://preview.redd.it/zqeejpikdp951.png?width=1920&format=png&auto=webp&s=cd0bd197771731c8780bdc3f09fc124451d2c9ee)
-*(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Catalina 15.15.6)*
+*(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Catalina 15.15.7)*
 
 My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning.
 
@@ -12,7 +12,7 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 ## The Build
 ![Image of Build Components](https://preview.redd.it/bq9ywx9vcp951.jpg?width=4032&format=pjpg&auto=webp&s=f48ae5ada572f37fa5f8befb6f55aeb7c1e8f5ea)
 
-* **OpenCore:** 0.6.2(updated from 0.5.9 to 0.6.2 using [OC-Tool](https://github.com/rusty-bits/OC-tool)10/8/20)
+* **OpenCore:** 0.6.2(updated from 0.5.9 to 0.6.2 using [OC-Tool](https://github.com/rusty-bits/OC-tool) 10/8/20)
 * **Mac OS:** Catalina 10.15.7(updated 10/1/20)
 * **SMBIOS:** MacPro7,1
 * **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
