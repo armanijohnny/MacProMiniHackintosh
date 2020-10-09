@@ -3,7 +3,7 @@
 ![Image of Hackintosh Working](https://preview.redd.it/zqeejpikdp951.png?width=1920&format=png&auto=webp&s=cd0bd197771731c8780bdc3f09fc124451d2c9ee)
 *(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Catalina 15.15.6)*
 
-My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning. 
+My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning.
 
 Seeing that Apple came out with a very pricey version of the Mac Pro that starts out at $6K, I basically laughed at that idea of buying one. Having been a long time lurker of the Hackintosh movement I decided to jump into the pool after hearing about the success people were having with the OpenCore Vanilla Guide plus the use of AMD CPU's.
 
@@ -12,8 +12,8 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 ## The Build
 ![Image of Build Components](https://preview.redd.it/bq9ywx9vcp951.jpg?width=4032&format=pjpg&auto=webp&s=f48ae5ada572f37fa5f8befb6f55aeb7c1e8f5ea)
 
-* **OpenCore:** 0.5.9
-* **Mac OS:** Catalina 10.15.6
+* **OpenCore:** 0.6.2(updated from 0.5.9 to 0.6.2 using [OC-Tool](https://github.com/rusty-bits/OC-tool)10/8/20)
+* **Mac OS:** Catalina 10.15.7(updated 10/1/20)
 * **SMBIOS:** MacPro7,1
 * **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
 * **Motherboard:** [Gigabyte X570i AORUS PRO WIFI](https://amzn.to/38wQtti)
@@ -39,9 +39,9 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 
 ## Start Here...
 
-If you want to take this seriously the [OpenCore guide](https://dortania.github.io/OpenCore-Desktop-Guide/) has all the steps to building your hackintosh. Read it line by line as you are going through it'll make sense. 
+If you want to take this seriously the [OpenCore guide](https://dortania.github.io/OpenCore-Desktop-Guide/) has all the steps to building your hackintosh. Read it line by line as you are going through it'll make sense.
 
-If you are more of a visual person that just rather learn as you go I suggest watching a few of [Technolli Youtube](https://www.youtube.com/c/TechNolli/videos) video's of various hackitosh builds he has put together for his subscribers. Literally he goes from start to finish. Building the computer, creating the bootloader, creating your EFI, walking through OpenCore, and installing it all on your new build. 
+If you are more of a visual person that just rather learn as you go I suggest watching a few of [Technolli Youtube](https://www.youtube.com/c/TechNolli/videos) video's of various hackitosh builds he has put together for his subscribers. Literally he goes from start to finish. Building the computer, creating the bootloader, creating your EFI, walking through OpenCore, and installing it all on your new build.
 
 The reason why I chose the NZHT H1 case was because of many reasons. 1) Form Factor, Design, and Size 2) AIO liquid cooling, case fans, all included and pre-configured 3)Power supply comes with it 4) Super easy to install everything! Last time I built a computer was probably 20 years ago back in college and this was just a breeze. Here's a handy video of the NZXT H1 build using the same motherboard that I used that came in handy. [Robeytech NZXT H1 Build](https://youtu.be/0tNqpVc-B9A)
 
@@ -50,7 +50,7 @@ The reason why I chose the NZHT H1 case was because of many reasons. 1) Form Fac
 * [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases/) - Tool to turn your PC into a Hackintosh
 * [GibMacOS](https://github.com/corpnewt/gibMacOS) - Script to download MacOS for Bootloader
 * [ProperTree](https://github.com/corpnewt/ProperTree) - GUI plist editor
-* [MaciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/) - AML(ACPI Machine Language) compiler and IDE 
+* [MaciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/) - AML(ACPI Machine Language) compiler and IDE
 * [Mount EFI](https://github.com/corpnewt/MountEFI) - Mount the EFI from the bootloader and system drive so you can add files to it
 * [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate SMBIOS Serial Number  
 * [USB Stick](https://amzn.to/38mfhUB) - For the bootloader. Minimum space needed at least 10GB. Must be formated so don't use and existing one with data you want to keep.
@@ -84,14 +84,14 @@ Follow the OpenCore guide will be key. If you wish to check out a video a link i
 **Video:** Great video on how to build the EFI folder that needs to be loaded onto the Bootloader: [Technolli Easy OepnCore for Ryzen](https://www.youtube.com/watch?v=UDY0PsCEHx8)
 
 **Installation**
-After loading all the neccessary items into the EFI folder onto your bootloader USB you are ready to Install it onto your PC. You'll want to go into the bios first to make some updates which the video below can explain what needs to be updated. 
+After loading all the neccessary items into the EFI folder onto your bootloader USB you are ready to Install it onto your PC. You'll want to go into the bios first to make some updates which the video below can explain what needs to be updated.
 
 **Instructions:** [Installation](https://dortania.github.io/OpenCore-Desktop-Guide/installation/installation-process.html)  
 **Video:** [Technolli Easy OpenCore for Ryzen Install](https://youtu.be/UDY0PsCEHx8?t=1272)  
 
 ## BIOS Settings
 
-You'll want to go into your BIOS by restarting the computer and just hitting Delete until BIOS comes up. Just make sure that using the X570I motherboard that these settings are in place. XMP is not needed to be updated but from what I can tell the ram was not taking full advantage until I updated this setting. Also probably suggest to update your BIOS version as well just in case they come out with any new updates or improvements. 
+You'll want to go into your BIOS by restarting the computer and just hitting Delete until BIOS comes up. Just make sure that using the X570I motherboard that these settings are in place. XMP is not needed to be updated but from what I can tell the ram was not taking full advantage until I updated this setting. Also probably suggest to update your BIOS version as well just in case they come out with any new updates or improvements.
 
 * Load Optimized Defaults
 * Above 4G Decoding - Disabled
@@ -141,7 +141,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 * [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550)
   * Read:  MB/s 5,000~
   * Write:  MB/s 4,400~
-  
+
 ## What Works
 
 * **The System, It Boots, and Works Just Like a Mac!**
@@ -161,16 +161,16 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 *(HEIC/Dynamic Wallpaper issue. Update 7/20/2020 Issue is now Resolved :-)*
 
 * **HEIC: [RESOLVED]** Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU. **7/19/2020** Finally figured out the issue and how to resolve it. I needed to update the BIOS for the PCIE from Auto -> Gen3. No more issues with HEIC images. In BIOS -> Advanced Mode -> Settings -> Miscellaneous -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it.
-* **Sleep/Wake**: Have not solved for this yet. This issue is very likley due to USB configuration. I'll try to properly assign the USB ports and see if that works. 
+* **Sleep/Wake**: Have not solved for this yet. This issue is very likley due to USB configuration. I'll try to properly assign the USB ports and see if that works.
 * **System Freeze Sometimes: [RESOLVED]** This is the [Kernal Panic Error](https://pastebin.com/qhKFQh8D) that I am seeing. After synching my Apple account, iCloud, Photos, and etc when the system is idle it freezes/crash but does not reboot. When I look into the crash logs I see VTDecoderXPCService. I think what may be happening is that the system is analysing all the iCloud photos/videos plus the 5700 XT is having some issues there and causes the VTDecoderXPCService kernel panic. This seems to happen when the machine starts to go into a low power state before sleep(even though I have sleep turned off) and the MacOS AMD kexts cause a panic. I guess it happens in the real [Mac Pro with 5700 XT GPU](https://www.reddit.com/r/macpro/comments/eecm69/mac_pro_2019_kernel_panic_with_5700_xt_installed/). Here's another thread about this [issue in real Mac Pro with the 5700 XT](https://forums.macrumors.com/threads/amd-radeon-rx-5700.2189066/page-7). Until Catalina or Big Sur adds 5700 XT in their list it might be an on going issue. Word has it if you use SMBIOS of iMac19,1 you don't encounter these VTDecoderXPCService kernal panic [Link](https://www.reddit.com/r/hackintosh/comments/f7ixji/yet_another_louqe_ghost_s1_success_story_opencore/) An alternative is to go with an older Radeon GPU like the 580 or Vega.
 
    It appears this system freeze/crash may not be an issue with the 5700 XT but more of a Catalina issues. There's a [whole thread of people](https://forums.macrumors.com/threads/constant-kernel-panics-userspace-watchdog-timeout-no-successful-checkins-from-com-apple-windowserver.2222878/) with real Macs having similar issues. **[Solution]** So I found this [thread on AMD-OSX](https://amd-osx.com/forum/viewtopic.php?t=10025) and it did support my theory that it was Photos that was causing the system to crash. I simply moved my photo library out of the pictures folder and into the trashbin to test and the freezing/crash issue stopped. Let the machine run so the monitor could turn off and I was able to log back in just fine. I wonder if the process actually finishes analyzing all my photos/videos if there would still be this issue with smaller batches of images and photos being added/synched. I would love to have Photo's but until Apple comes up with a fix I may scrap it or I'll try to have the Photo's library on my 2nd M.2 drive that is designated for media or perhaps on my NAS. I'll report back and see but for now the system stopped crashing.
-    
+
     **Update 7/05/2020: Work Around Solution** So I tested out my theory by creating a Photo's library on my NAS but the problem with that as I found out is that Photo's don't work on the NAS if I want to synch it with iCloud. However with my secondary Sabrent 1TB M.2 (now diesignated as my media drive) I created a new Photo's library on there and was able to synch my iCloud and it had no issues with freezing the system and successfully analyse all the videos and photos. So looks like i found my solution.
-    
+
     **Update 7/07/2020:** So it seems like this is still not exaclty resolved/worked. I got the same panic error today while I was transfering a bunch of videos over from my DJI Osmo. It's possible the Photos was running it's analyses in the background again. I got the same Kernal Panic as I did before https://pastebin.com/qhKFQh8D. So it seems that this is a big problem on legit machines and not just hackintosh.  
-    
-    **Update 7/19/2020 [Resolved]** I had major issues with freezing and I think I solved that by updating the BIOS Settings for the PCIE from Auto to Gen3 for the GPU. This seemed to have keep things stable and with no crashing! So if you are using a similar motherboard and GPU as mine try this in the BIOS: In BIOS -> Advanced Mode -> Settings -> Miscellaneous -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it. This solved all my issues with the system freezing. I even had it scan my 101GB worth of icloud Photos library with no issues. Also the issues with HEIC/Dynamic wallpaper went away as well. No more freezing while left idle. 
+
+    **Update 7/19/2020 [Resolved]** I had major issues with freezing and I think I solved that by updating the BIOS Settings for the PCIE from Auto to Gen3 for the GPU. This seemed to have keep things stable and with no crashing! So if you are using a similar motherboard and GPU as mine try this in the BIOS: In BIOS -> Advanced Mode -> Settings -> Miscellaneous -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it. This solved all my issues with the system freezing. I even had it scan my 101GB worth of icloud Photos library with no issues. Also the issues with HEIC/Dynamic wallpaper went away as well. No more freezing while left idle.
 
 ## Issues
 
@@ -183,7 +183,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 
 **Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
 
-**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. H̶E̶I̶C̶ ̶a̶n̶d̶ ̶S̶y̶s̶t̶e̶m̶ ̶f̶r̶e̶e̶z̶e̶ ̶s̶e̶e̶m̶ ̶t̶o̶ ̶b̶e̶ ̶r̶e̶l̶a̶t̶e̶d̶ ̶t̶o̶ ̶5̶7̶0̶0̶ ̶X̶T̶ ̶s̶o̶ ̶I̶ ̶m̶a̶y̶ ̶l̶o̶o̶k̶ ̶t̶o̶ ̶g̶o̶ ̶w̶i̶t̶h̶ ̶a̶n̶o̶t̶h̶e̶r̶ ̶G̶P̶U̶ ̶l̶i̶k̶e̶ ̶t̶h̶e̶ ̶V̶e̶g̶a̶,̶ ̶5̶8̶0̶,̶ ̶o̶r̶ ̶V̶I̶I̶ ̶o̶r̶ ̶j̶u̶s̶t̶ ̶w̶a̶i̶t̶ ̶i̶t̶ ̶o̶u̶t̶ ̶u̶n̶t̶i̶l̶ ̶A̶p̶p̶l̶e̶ ̶h̶a̶s̶ ̶b̶e̶t̶t̶e̶r̶ ̶s̶u̶p̶p̶o̶r̶t̶ ̶f̶o̶r̶ ̶t̶h̶e̶s̶e̶ ̶c̶a̶r̶d̶s̶.̶ ̶ Update: 7/20/20 Now that I've have the 5700 XT GPU issues resolved this system is just badass! 
+**What about the issues?** I kind of expected it and give me some time I should be able to solve for it. H̶E̶I̶C̶ ̶a̶n̶d̶ ̶S̶y̶s̶t̶e̶m̶ ̶f̶r̶e̶e̶z̶e̶ ̶s̶e̶e̶m̶ ̶t̶o̶ ̶b̶e̶ ̶r̶e̶l̶a̶t̶e̶d̶ ̶t̶o̶ ̶5̶7̶0̶0̶ ̶X̶T̶ ̶s̶o̶ ̶I̶ ̶m̶a̶y̶ ̶l̶o̶o̶k̶ ̶t̶o̶ ̶g̶o̶ ̶w̶i̶t̶h̶ ̶a̶n̶o̶t̶h̶e̶r̶ ̶G̶P̶U̶ ̶l̶i̶k̶e̶ ̶t̶h̶e̶ ̶V̶e̶g̶a̶,̶ ̶5̶8̶0̶,̶ ̶o̶r̶ ̶V̶I̶I̶ ̶o̶r̶ ̶j̶u̶s̶t̶ ̶w̶a̶i̶t̶ ̶i̶t̶ ̶o̶u̶t̶ ̶u̶n̶t̶i̶l̶ ̶A̶p̶p̶l̶e̶ ̶h̶a̶s̶ ̶b̶e̶t̶t̶e̶r̶ ̶s̶u̶p̶p̶o̶r̶t̶ ̶f̶o̶r̶ ̶t̶h̶e̶s̶e̶ ̶c̶a̶r̶d̶s̶.̶ ̶ Update: 7/20/20 Now that I've have the 5700 XT GPU issues resolved this system is just badass!
 
 **Am I worried that Apple is going to be usng their ARM Chips?** As noted in their conference they intend to continue using Intel for awhile and supporting them for many many years. Plus the hackintosh community is very robust. Even to this day people can still jailbreak their iPhones and Apple I'm sure have tried to stop that.  
 
@@ -191,7 +191,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 
 ## Resources
 * [**OpenCore**](https://dortania.github.io/OpenCore-Desktop-Guide/)
-* [**Technolli**](https://www.youtube.com/c/TechNolli/videos) 
+* [**Technolli**](https://www.youtube.com/c/TechNolli/videos)
 * [**r/Hackintosh subreddit**](https://www.reddit.com/r/hackintosh/)
 * [**AMD OSX**](https://forum.amd-osx.com/index.php)
 * [**TonyMacX86**](https://www.tonymacx86.com/)
