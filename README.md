@@ -130,7 +130,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
   * OpenCL: 70,606 **(Recent AMD patches.plist huge increase from 52,439 to 70,606 11/13/20)**
   * Metal: 55,524 **(Recent AMD patches.plist huge increase from 55,524 to 79,586 11/13/20)**
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
-[Cinebench R23](https://www.maxon.net/en-us/products/cinebench-r20-overview/): Multicore 23,808; Single Core 1123 (11/14/20)
+* [Cinebench R23](https://www.maxon.net/en-us/products/cinebench-r20-overview/): Multicore 23,808; Single Core 1123 (11/14/20)
 * [Blender Benchmark](https://opendata.blender.org/)
   * bmw27: 1:14
   * classroom: 3:37
@@ -145,7 +145,6 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 
 ## What Works
 
-![Image of Big Sur Hackintosh Working](https://preview.redd.it/in1t8dy6v7z51.png?width=5120&format=png&auto=webp&s=aecee3236f6075693747d5503eb6f78654383e3a)
 * **The System, It Boots, and Works Just Like a Mac!**
 * **CPU:** While this works it's not benchmarking where it should be. Did I lose in the silicon lottery?
 * **AirDrop Handoff:** I replaced the Intel card with the Broadcom CM94360NG
@@ -182,7 +181,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 ## My Thoughts
 
 ![Image of the build](https://preview.redd.it/t2t96tkhd2c51.jpg?width=4032&format=pjpg&auto=webp&s=9c02d95d49c384a89c4345c376b713135dc13908)
-*The Build (updated to MacPro7,1 and running Big Sur 11.0.1)*  
+*The original build before upgrading to Big Sur and a Dell 49 inch*  
 
 **Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
 
