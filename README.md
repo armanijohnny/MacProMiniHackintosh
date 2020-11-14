@@ -1,7 +1,7 @@
 # Mac Pro Mini Hackintosh aka iHack Pro
 
-![Image of Hackintosh Working](https://preview.redd.it/zqeejpikdp951.png?width=1920&format=png&auto=webp&s=cd0bd197771731c8780bdc3f09fc124451d2c9ee)
-*(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Catalina 15.15.7)*
+![Image of Hackintosh Working](https://preview.redd.it/pvdsiwgyu7z51.jpg?width=4000&format=pjpg&auto=webp&s=a3e7a5adb2ac090da82d6e79781ffedd80b3fd6a)
+*(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Big Sur 11.0.1 with a 49inch Dell monitor)*
 
 My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning.
 
@@ -12,8 +12,8 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 ## The Build
 ![Image of Build Components](https://preview.redd.it/bq9ywx9vcp951.jpg?width=4032&format=pjpg&auto=webp&s=f48ae5ada572f37fa5f8befb6f55aeb7c1e8f5ea)
 
-* **OpenCore:** 0.6.2(updated from 0.5.9 to 0.6.2 using [OC-Tool](https://github.com/rusty-bits/OC-tool) 10/8/20)
-* **Mac OS:** Catalina 10.15.7(updated 10/1/20)
+* **OpenCore:** 0.6.3(updated from 0.6.2 to 0.6.3 using [OC-Tool](https://github.com/rusty-bits/OC-tool) 11/13/20)
+* **Mac OS:** Big Sur (updated 11/13/20)
 * **SMBIOS:** MacPro7,1
 * **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
 * **Motherboard:** [Gigabyte X570i AORUS PRO WIFI](https://amzn.to/38wQtti)
@@ -112,7 +112,7 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) - Used for graphics patching DRM, boardID, framebuffer fixes, etc, all GPUs benefit from this kext.
 * [smalltreeintel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases) - Ethernet for this motherboard to work. Required for I211 NICs, based off of the SmallTree kext but patched to support I211
 * [SMCAMDProcessor](https://github.com/trulyspinach/SMCAMDProcessor) - All the tools for CPU power and Temprature out there are made for Windows. There's nothing for Mac's with AMD since the real Mac's don't have AMD. I found this tool that allows for you to manage the power and monitor the AMD CPU. Once installed iStat's pro now reads the temp and they have a nice app that has much more data and management.
-* [MacProMemoryNotificationDisabler](https://github.com/IOIIIO/MacProMemoryNotificationDisabler/releases/) - Fix the "too much memory" error in the Memory tab of About This Mac. Typically when you use SMBIOS MacPro7,1
+* [MacProMemoryNotificationDisabler](https://github.com/IOIIIO/MacProMemoryNotificationDisabler/releases/) - Fix the "too much memory" error in the Memory tab of About This Mac. Typically when you use SMBIOS MacPro7,1 **(Appears that this is still an issue in Big Sur 11/13/20)**
 
 ## ACPI  
 
@@ -120,23 +120,24 @@ You'll want to go into your BIOS by restarting the computer and just hitting Del
 
 ## Benchmarks
 
-Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the Mac Pro 16 core and the Mac Pro 12 Core. However either there is some issue with how Geekbench works, the CPU, or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. I've used SMCAMD tool to better gauge temprature and core usage and all appears normal.
+Just looking at Geekbench 5 numbers on the single core level it beats out all the Macs that Apple sells(iMac Pro, Mac Pro, Macbook Pro, and etc). On the multicore level it benchmarks between the Mac Pro 16 core and the Mac Pro 12 Core. However either there is some issue with how Geekbench works, the CPU, or the parts I've used but in theory and based on all the benchmarks I've seen from others the multicore on a 3950X should come in over 14,000~ in line with the Mac Pro 16 core. I've used SMCAMD tool to better gauge temprature and core usage and all appears normal. **(Resolved: 11/13/20 Recent updates to the patches.plist for AMD plus Big Sur has brought this right up to where it should be.)**
 
 On the other hand using more 'real world' benchmarks such as Cinebench, Blender, BruceX this thing is an absolute beast and performs just where the Ryzen 9 3950X should perform if not better in some cases. So overally yeah it totally matches the Mac Pro.
 
 * [Geekbench 5](https://www.geekbench.com/)
   * Single Core: 1,332
-  * Multicore: 12,934 (Still need to figure out why it's not closer to 14K~)
-  * OpenCL: 52,439
-  * Metal: 55,524
+  * Multicore: 14,509 (After big Sur update and recent AMD patches.plist it jumped from 12,934 to 14,509 11/13/20)
+  * OpenCL: 70,606 **(Recent AMD patches.plist huge increase from 52,439 to 70,606 11/13/20)**
+  * Metal: 55,524 **(Recent AMD patches.plist huge increase from 55,524 to 79,586 11/13/20)**
 * [Cinebench R20](https://www.maxon.net/en-us/products/cinebench-r20-overview/): 9,361
+[Cinebench R23](https://www.maxon.net/en-us/products/cinebench-r20-overview/): Multicore 23,808; Single Core 1123 (11/14/20)
 * [Blender Benchmark](https://opendata.blender.org/)
   * bmw27: 1:14
   * classroom: 3:37
   * fish_cat: 1:52
-  * koro: 2:38
+  * koro: 1:46
   * pavillon_barcelona: 3:57
-  * victor: 8:35
+  * victor: 7:03
 * [BruceX](https://blog.alex4d.com/2013/10/30/brucex-a-new-fcpx-benchmark/): 14.73 seconds
 * [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550)
   * Read:  MB/s 5,000~
@@ -144,6 +145,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 
 ## What Works
 
+![Image of Big Sur Hackintosh Working](https://preview.redd.it/in1t8dy6v7z51.png?width=5120&format=png&auto=webp&s=aecee3236f6075693747d5503eb6f78654383e3a)
 * **The System, It Boots, and Works Just Like a Mac!**
 * **CPU:** While this works it's not benchmarking where it should be. Did I lose in the silicon lottery?
 * **AirDrop Handoff:** I replaced the Intel card with the Broadcom CM94360NG
@@ -154,6 +156,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 * **LAN:** Works just fine but needs the right kext
 * **Final Cut Pro:** Works just fine
 * **Audio:** Top headphone jack works. I plan on using a USB for my DAC.  
+* **Sleep:** As of 11/13/20 with the Big Sur update it works just fine with no mods!
 
 ## What Doesn't Work
 
@@ -161,7 +164,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 *(HEIC/Dynamic Wallpaper issue. Update 7/20/2020 Issue is now Resolved :-)*
 
 * **HEIC: [RESOLVED]** Sometimes HEIC Images appears to have issues. Big pixalated boxes on the dynamic wallpaper and image preview. Likely an issue with 5700XT GPU. **7/19/2020** Finally figured out the issue and how to resolve it. I needed to update the BIOS for the PCIE from Auto -> Gen3. No more issues with HEIC images. In BIOS -> Advanced Mode -> Settings -> Miscellaneous -> PCIe Slot Configuration -> Change from Auto to Gen3 and that's it.
-* **Sleep/Wake**: Have not solved for this yet. This issue is very likley due to USB configuration. I'll try to properly assign the USB ports and see if that works.
+* **Sleep/Wake: [Resolved]** Have not solved for this yet. This issue is very likley due to USB configuration. I'll try to properly assign the USB ports and see if that works. **11/13/20 Big Sur update solved the sleep issues with no mods**
 * **System Freeze Sometimes: [RESOLVED]** This is the [Kernal Panic Error](https://pastebin.com/qhKFQh8D) that I am seeing. After synching my Apple account, iCloud, Photos, and etc when the system is idle it freezes/crash but does not reboot. When I look into the crash logs I see VTDecoderXPCService. I think what may be happening is that the system is analysing all the iCloud photos/videos plus the 5700 XT is having some issues there and causes the VTDecoderXPCService kernel panic. This seems to happen when the machine starts to go into a low power state before sleep(even though I have sleep turned off) and the MacOS AMD kexts cause a panic. I guess it happens in the real [Mac Pro with 5700 XT GPU](https://www.reddit.com/r/macpro/comments/eecm69/mac_pro_2019_kernel_panic_with_5700_xt_installed/). Here's another thread about this [issue in real Mac Pro with the 5700 XT](https://forums.macrumors.com/threads/amd-radeon-rx-5700.2189066/page-7). Until Catalina or Big Sur adds 5700 XT in their list it might be an on going issue. Word has it if you use SMBIOS of iMac19,1 you don't encounter these VTDecoderXPCService kernal panic [Link](https://www.reddit.com/r/hackintosh/comments/f7ixji/yet_another_louqe_ghost_s1_success_story_opencore/) An alternative is to go with an older Radeon GPU like the 580 or Vega.
 
    It appears this system freeze/crash may not be an issue with the 5700 XT but more of a Catalina issues. There's a [whole thread of people](https://forums.macrumors.com/threads/constant-kernel-panics-userspace-watchdog-timeout-no-successful-checkins-from-com-apple-windowserver.2222878/) with real Macs having similar issues. **[Solution]** So I found this [thread on AMD-OSX](https://amd-osx.com/forum/viewtopic.php?t=10025) and it did support my theory that it was Photos that was causing the system to crash. I simply moved my photo library out of the pictures folder and into the trashbin to test and the freezing/crash issue stopped. Let the machine run so the monitor could turn off and I was able to log back in just fine. I wonder if the process actually finishes analyzing all my photos/videos if there would still be this issue with smaller batches of images and photos being added/synched. I would love to have Photo's but until Apple comes up with a fix I may scrap it or I'll try to have the Photo's library on my 2nd M.2 drive that is designated for media or perhaps on my NAS. I'll report back and see but for now the system stopped crashing.
@@ -178,8 +181,8 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 
 ## My Thoughts
 
-![Image of Pixalated Wallpaper](https://preview.redd.it/t2t96tkhd2c51.jpg?width=4032&format=pjpg&auto=webp&s=9c02d95d49c384a89c4345c376b713135dc13908)
-*The Build (updated to MacPro7,1 and running Catalina 10.15.6)*  
+![Image of the build](https://preview.redd.it/t2t96tkhd2c51.jpg?width=4032&format=pjpg&auto=webp&s=9c02d95d49c384a89c4345c376b713135dc13908)
+*The Build (updated to MacPro7,1 and running Big Sur 11.0.1)*  
 
 **Was it worth it?** Heck yeah it was worth it. I got to build a badass computer and learn how to hack it.  
 
