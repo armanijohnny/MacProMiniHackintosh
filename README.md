@@ -142,6 +142,7 @@ On the other hand using more 'real world' benchmarks such as Cinebench, Blender,
 * [Blackmagic Disk Speed Test](https://apps.apple.com/us/app/blackmagic-disk-speed-test/id425264550)
   * Read:  MB/s 5,000~
   * Write:  MB/s 4,400~
+* [Xcode Benchmark](https://github.com/devMEremenko/XcodeBenchmark): 99.077 seconds
 
 ## What Works
 
