@@ -12,8 +12,8 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 ## The Build
 ![Image of Build Components](https://preview.redd.it/bq9ywx9vcp951.jpg?width=4032&format=pjpg&auto=webp&s=f48ae5ada572f37fa5f8befb6f55aeb7c1e8f5ea)
 
-* **OpenCore:** 0.6.3(updated from 0.6.2 to 0.6.3 using [OC-Tool](https://github.com/rusty-bits/OC-tool) 11/13/20)
-* **Mac OS:** Big Sur (updated 11/13/20)
+* **OpenCore:** 0.6.6(updated from 0.6.3 to 0.6.6 using [OC-Tool](https://github.com/rusty-bits/OC-tool) 2/25/21)
+* **Mac OS:** Big Sur 11.2.2(updated 2/25/21)
 * **SMBIOS:** MacPro7,1
 * **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
 * **Motherboard:** [Gigabyte X570i AORUS PRO WIFI](https://amzn.to/38wQtti)
@@ -79,7 +79,7 @@ Follow the OpenCore guide will be key. If you wish to check out a video a link i
 * [ACPI](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-USBX-DESKTOP.aml) - This is all I needed  
 * [Config.plist Setup](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/)  
 * [AMD Zen Config.plist](https://dortania.github.io/OpenCore-Desktop-Guide/AMD/zen.html)
-* [Patches.plist](https://github.com/AMD-OSX/AMD_Vanilla/tree/opencore/17h) - AMD Kernal patching
+* [Patches.plist](https://github.com/AMD-OSX/AMD_Vanilla/tree/opencore/17h_19h) - AMD Kernal patching
 
 **Video:** Great video on how to build the EFI folder that needs to be loaded onto the Bootloader: [Technolli Easy OepnCore for Ryzen](https://www.youtube.com/watch?v=UDY0PsCEHx8)
 
