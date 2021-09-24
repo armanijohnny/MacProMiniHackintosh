@@ -1,6 +1,6 @@
 # Mac Pro Mini Hackintosh aka iHack Pro
 
-![Image of Hackintosh Working](https://preview.redd.it/pvdsiwgyu7z51.jpg?width=4000&format=pjpg&auto=webp&s=a3e7a5adb2ac090da82d6e79781ffedd80b3fd6a)
+![Image of Hackintosh Working](https://preview.redd.it/057okas3zsz51.jpg?width=960&crop=smart&auto=webp&s=e7a5b9955add2d0488b2ca5c19ee359d486f5ded)
 *(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Big Sur 11.0.1 with a 49inch Dell monitor)*
 
 My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning.
