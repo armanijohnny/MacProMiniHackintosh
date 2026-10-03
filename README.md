@@ -1,7 +1,7 @@
 # Mac Pro Mini Hackintosh aka iHack Pro
 
 ![Image of Hackintosh Working](https://preview.redd.it/057okas3zsz51.jpg?width=960&crop=smart&auto=webp&s=e7a5b9955add2d0488b2ca5c19ee359d486f5ded)
-*(It works! I've since updated from iMacPro1,1 to MacPro7,1 and upgraded to Big Sur 11.0.1 with a 49inch Dell monitor)*
+*10/03/2026 Likely my last hackintosh updated... The latest EFI update which you can download on the right is OpenCore 1.0.7 that works on MacOS Tahoe. Supposedly the last OS that will work with hackintosh. It's been a great run!*
 
 My goal was to build a Hackintosh that has a smaller footprint than the 2019 Mac Pro but also just as powerful if not more powerful. I've been using a 2012 Macbook Pro that is still running strong but I wanted much more power to do video/photo editing, mobile app development, and some machine learning.
 
@@ -12,8 +12,8 @@ In this "Guide" I'm not going to go over every step of the build but will point 
 ## The Build
 ![Image of Build Components](https://preview.redd.it/bq9ywx9vcp951.jpg?width=4032&format=pjpg&auto=webp&s=f48ae5ada572f37fa5f8befb6f55aeb7c1e8f5ea)
 
-* **OpenCore:** 0.6.6(updated from 0.6.3 to 0.6.6 using [OC-Tool](https://github.com/rusty-bits/OC-tool) 2/25/21)
-* **Mac OS:** Big Sur 11.2.2(updated 2/25/21)
+* **OpenCore:** 1.0.7
+* **Mac OS:** MacOS Tahoe 26.7.1(updated 10/03/26)
 * **SMBIOS:** MacPro7,1
 * **CPU:** [AMD Ryzen 9 3950X](https://amzn.to/3gnfCcr)
 * **Motherboard:** [Gigabyte X570i AORUS PRO WIFI](https://amzn.to/38wQtti)
